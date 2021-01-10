@@ -6,7 +6,13 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block header %}
+        <center><h1> ProStage </h1></center>
+        {% endblock %}
+        {% block filtre %}
+        <h2>------------ Filtre ------------ </h1>
+        {% endblock %}
+        {% block contenu %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>
