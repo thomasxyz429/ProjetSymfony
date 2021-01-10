@@ -23,7 +23,16 @@ class ProStageController extends AbstractController
     public function affichageEntreprises(): Response
     {
         return $this->render('pro_stage/affichageEntreprises.html.twig', [
-        ]);
+        'idEntreprise'=>"vide"]);
+    }
+
+    /**
+     * @Route("/entreprises/{idEntreprise}", name="pro_stage_entreprises_avec_id")
+     */
+    public function affichageEntreprisesAvecId($idEntreprise): Response
+    {
+        return $this->render('pro_stage/affichageEntreprises.html.twig', [
+          'idEntreprise'=>$idEntreprise]);
     }
 
     /**
@@ -32,7 +41,16 @@ class ProStageController extends AbstractController
     public function affichageFormations(): Response
     {
         return $this->render('pro_stage/affichageFormations.html.twig', [
-        ]);
+          'idFormation'=>"vide"  ]);
+    }
+
+    /**
+     * @Route("/formations/{idFormation}", name="pro_stage_formations_avec_id")
+     */
+    public function affichageFormationsAvecId($idFormation): Response
+    {
+        return $this->render('pro_stage/affichageFormations.html.twig', [
+          'idFormation'=>$idFormation ]);
     }
 
         /**
