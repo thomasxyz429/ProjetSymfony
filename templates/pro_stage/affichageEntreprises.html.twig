@@ -2,6 +2,19 @@
 
 {% block header %}
 <center>
-<h1> Cette page affichera la liste des offres de {{idEntreprise}}</h1>
+  {% if idEntreprise == "IBM" %}
+   {% set entreprise = " I.B.M." %}
+
+   {% elseif idEntreprise == "UBISOFT" %}
+ {% set entreprise = "Ubisoft" %}
+
+    {% elseif idEntreprise == "SAFRAN" %}
+    {% set entreprise = "Safran" %}
+
+ {% else %}
+    {% set entreprise = "tout le monde" %}
+
+ {% endif %}
+ <h1> Cette page affichera la liste des offres de {{entreprise}}  </h1>
 </center>
 {% endblock %}

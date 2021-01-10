@@ -1,122 +1,130 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{% block title %}ProStage{% endblock %}</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}ProStage{% endblock %}</title>
 
-        <!-- BLOC DE FEUILLE DE STYLE -->
-        {% block stylesheets %}
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-        {% endblock %}
-    </head>
-    <body>
-      <div class="container-fluid">
-
-        <!-- BLOC DE L ENTETE -->
-          {% block header %}
-          <div class="row">
-            <div class="col-md-12">
-            </div>
-          {% endblock %}
-
-        <!-- BLOC DE FILTRE -->
-        {% block filtre %}
-        <div class="row">
-          <div class="col-md-12">
-            <!-- <ul class="nav justify-content-center ">
-      <li class="nav-item">
-      <a class="nav-link active" href="/">Acceuil</a>
-      </li>
-      <li class="nav-item">
-      <a class="nav-link" href="entreprises">Filtre par Entreprises</a>
-      </li>
-      <li class="nav-item">
-      <a class="nav-link" href="formations">Filtre par formation</a>
-      </li>
-      </ul> -->
-
-      <!-- CONTENU FILTRE -->
-      <div class="collapse" id="navbarToggleExternalContent">
-  <div class="bg-dark p-4">
-    <h5 class="text-white h4">Choisir une Entreprise :</h5>
-    <span class="text-muted" >
-  <a href="http://127.0.0.1:8000/entreprises/IBM"><button class="btn btn-primary" >IBM</button></a>
-<a href="http://127.0.0.1:8000/entreprises/SAFRAN"><button class="btn btn-primary">SAFRAN</button></a>
-  <a href="http://127.0.0.1:8000/entreprises/UBISOFT"><button class="btn btn-primary">UBISOFT</button></a>
-</span>
-  </div>
-</div>
-
-<div class="collapse" id="navbarToggleExternalContent2">
-<div class="bg-dark p-4">
-<h5 class="text-white h4">Choisir une formation :</h5>
-<span class="text-muted">
-<a href="http://127.0.0.1:8000/formations/DUTINFO"> <button class="btn btn-primary">DUT INFO</button></a>
-<a href="http://127.0.0.1:8000/formations/LPMETIERDUNUMERIQUE"><button class="btn btn-primary">LP metier du numerique</button></a>
-<a href="http://127.0.0.1:8000/formations/DUTGIM"><button class="btn btn-primary"> DUT GIM</button></a>
-</span>
-</div>
-</div>
-
-<!-- FILTRE -->
-
-<nav class="navbar navbar-dark bg-dark">
+  <!-- BLOC DE FEUILLE DE STYLE -->
+  {% block stylesheets %}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  {% endblock %}
+</head>
+<body>
   <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="true" aria-label="Toggle navigation">
-      Filtrage par entreprises
-    </button>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent2" aria-controls="navbarToggleExternalContent2" aria-expanded="true" aria-label="Toggle navigation">
-      Filtrage par formations
-    </button>
+
+    <!-- BLOC DU MENU -->
+    {% block Menu %}
+    <div class="row">
+          <nav class="nav nav-pills nav-justified">
+      <div class="col-md-4 col-sm-12 col-12" >
+
+  <a class="nav-item nav-link active" href="http://127.0.0.1:8000">Acceuil</a>
+</div>
+
+    <div class="col-md-4 col-sm-12 col-12">
+  <a class="nav-item nav-link active" href="http://127.0.0.1:8000/formations">Formations</a>
+</div>
+    <div class="col-md-4 col-sm-12 col-12">
+  <a class="nav-item nav-link active" href="http://127.0.0.1:8000/entreprises">Entreprises</a>
   </div>
 </nav>
-</div>
-</div>
-
-{% endblock %}
-
-
-
-
-
-        <!-- BLOC DE CONTENU -->
-        {% block contenu %}
-        <div class="row">
-      		<div class="col-md-12">
-      		</div>
-      	</div>
-        {% endblock %}
-
-    <!-- BLOC DE FOOTER -->
-        {% block Footer %}
-        <footer style="position: absolute; bottom: 0; left: 0; right: 0">
-        <div class="row">
-      		<div class="col-md-12">
-            <div class="card bg-dark text-black">
-  <img src="https://onlyvectorbackgrounds.com/wp-content/uploads/2019/08/Modern-Clean-Abstract-Shapes-Background-Blue.jpg" class="card-img" alt="..." style="background-size: cover;
-
-height: 300px;">
-  <div class="card-img-overlay">
-    <br>
-    <br>
-    <center><h5 class="card-title">Réalisé par </h5>
-    <p class="card-text">Thomas Galinié</p>
-    <p class="card-text">DUT Info S3 TD II TP 4 A</p>
-  </center>
   </div>
-</div>
-</div>
-      		</div>
-      	</div>
-      </footer>
-        {% endblock %}
+    {% endblock %}
+    <!-- BLOC DE L ENTETE -->
+    {% block header %}
 
-        <!-- BLOC DE FEUILLE DE JAVASCRIPT -->
-        {% block javascripts %}
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-        {% endblock %}
+    <div class="row">
+      <div class="col-md-12">
+      </div>
+
+      {% endblock %}
+
+      <!-- BLOC DE FILTRE -->
+      {% block filtre %}
+      <div class="row">
+        <div class="col-md-12">
+
+          <!-- CONTENU FILTRE -->
+          <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+              <h5 class="text-white h4">Choisir une Entreprise :</h5>
+              <span class="text-muted" >
+                <a href="http://127.0.0.1:8000/formations"><button class="btn btn-primary" >IBM</button></a>
+                <a href="http://127.0.0.1:8000/entreprises/SAFRAN"><button class="btn btn-primary">SAFRAN</button></a>
+                <a href="http://127.0.0.1:8000/entreprises/UBISOFT"><button class="btn btn-primary">UBISOFT</button></a>
+              </span>
+            </div>
           </div>
-    </body>
+          <div class="collapse" id="navbarToggleExternalContent2">
+            <div class="bg-dark p-4">
+              <h5 class="text-white h4">Choisir une formation :</h5>
+              <span class="text-muted">
+                <a href="http://127.0.0.1:8000/formations/DUTINFO"> <button class="btn btn-primary">DUT INFO</button></a>
+                <a href="http://127.0.0.1:8000/formations/LPMETIERDUNUMERIQUE"><button class="btn btn-primary">LP metier du numerique</button></a>
+                <a href="http://127.0.0.1:8000/formations/DUTGIM"><button class="btn btn-primary"> DUT GIM</button></a>
+              </span>
+            </div>
+          </div>
+
+          <!-- FILTRE -->
+
+          <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="true" aria-label="Toggle navigation">
+                Filtrage par entreprises
+              </button>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent2" aria-controls="navbarToggleExternalContent2" aria-expanded="true" aria-label="Toggle navigation">
+                Filtrage par formations
+              </button>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+      {% endblock %}
+
+
+
+
+
+      <!-- BLOC DE CONTENU -->
+      {% block contenu %}
+      <div class="row">
+        <div class="col-md-12">
+        </div>
+      </div>
+      {% endblock %}
+
+      <!-- BLOC DE FOOTER -->
+      {% block Footer %}
+      <footer style="position: absolute; bottom: 0; left: 0; right: 0">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card bg-dark text-black">
+              <img src="https://onlyvectorbackgrounds.com/wp-content/uploads/2019/08/Modern-Clean-Abstract-Shapes-Background-Blue.jpg" class="card-img" alt="..." style="background-size: cover;
+
+              height: 300px;">
+              <div class="card-img-overlay">
+                <br>
+                <br>
+                <center><h5 class="card-title">Réalisé par </h5>
+                  <p class="card-text">Thomas Galinié</p>
+                  <p class="card-text">DUT Info S3 TD II TP 4 A</p>
+                </center>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    {% endblock %}
+
+    <!-- BLOC DE FEUILLE DE JAVASCRIPT -->
+    {% block javascripts %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    {% endblock %}
+  </div>
+</body>
 
 </html>

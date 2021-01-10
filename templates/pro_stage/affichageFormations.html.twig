@@ -2,7 +2,20 @@
 
 {% block header %}
 <center>
-<h1>Cette page affichera la liste des formations de l'IUT proposé pour {{idFormation}} </h1>
+ {% if idFormation == "DUTINFO" %}
+  {% set formation = "le DUT Info" %}
+
+  {% elseif idFormation == "LPMETIERDUNUMERIQUE" %}
+{% set formation = "les LP métier du numérique" %}
+
+   {% elseif idFormation == "DUTGIM" %}
+   {% set formation = "le DUT GIM" %}
+
+{% else %}
+   {% set formation = "tout le monde" %}
+
+{% endif %}
+<h1>Cette page affichera la liste des formations de l'IUT proposé pour {{formation}}  </h1>
 </center>
 {% endblock %}
 
