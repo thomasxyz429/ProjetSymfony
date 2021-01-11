@@ -16,17 +16,17 @@
     <!-- BLOC DU MENU -->
     {% block Menu %}
     <div class="row">
-          <nav class="nav nav-pills nav-justified">
+          <nav class="nav nav-pills nav-justified" style="margin-top:3px;">
       <div class="col-md-4 col-sm-12 col-12" >
 
-  <a class="nav-item nav-link active" href="http://127.0.0.1:8000">Acceuil</a>
+  <a class="nav-item nav-link active" href="{{path('pro_stage')}}">Acceuil</a>
 </div>
 
     <div class="col-md-4 col-sm-12 col-12">
-  <a class="nav-item nav-link active" href="http://127.0.0.1:8000/formations">Formations</a>
+  <a class="nav-item nav-link active" href="{{path('pro_stage_formations')}}">Formations</a>
 </div>
     <div class="col-md-4 col-sm-12 col-12">
-  <a class="nav-item nav-link active" href="http://127.0.0.1:8000/entreprises">Entreprises</a>
+  <a class="nav-item nav-link active" href="{{path('pro_stage_entreprises')}}">Entreprises</a>
   </div>
 </nav>
   </div>
@@ -34,7 +34,7 @@
     <!-- BLOC DE L ENTETE -->
     {% block header %}
 
-    <div class="row">
+    <div class="row"style="margin-top:3px;">
       <div class="col-md-12">
       </div>
 
@@ -42,17 +42,17 @@
 
       <!-- BLOC DE FILTRE -->
       {% block filtre %}
-      <div class="row">
+      <div class="row"style="margin-top:3px;">
         <div class="col-md-12">
 
           <!-- CONTENU FILTRE -->
-          <div class="collapse" id="navbarToggleExternalContent">
+          <div class="collapse" id="navbarToggleExternalContent" >
             <div class="bg-dark p-4">
               <h5 class="text-white h4">Choisir une Entreprise :</h5>
               <span class="text-muted" >
-                <a href="http://127.0.0.1:8000/formations"><button class="btn btn-primary" >IBM</button></a>
-                <a href="http://127.0.0.1:8000/entreprises/SAFRAN"><button class="btn btn-primary">SAFRAN</button></a>
-                <a href="http://127.0.0.1:8000/entreprises/UBISOFT"><button class="btn btn-primary">UBISOFT</button></a>
+                <a href="{{path('pro_stage_entreprises_avec_id', {idEntreprise:'IBM'})}}"><button class="btn btn-primary" >IBM</button></a>
+                <a href="{{path('pro_stage_entreprises_avec_id',{idEntreprise:'SAFRAN'})}}"><button class="btn btn-primary">SAFRAN</button></a>
+                <a href="{{path('pro_stage_entreprises_avec_id',{idEntreprise:'UBISOFT'})}}"><button class="btn btn-primary">UBISOFT</button></a>
               </span>
             </div>
           </div>
@@ -60,9 +60,9 @@
             <div class="bg-dark p-4">
               <h5 class="text-white h4">Choisir une formation :</h5>
               <span class="text-muted">
-                <a href="http://127.0.0.1:8000/formations/DUTINFO"> <button class="btn btn-primary">DUT INFO</button></a>
-                <a href="http://127.0.0.1:8000/formations/LPMETIERDUNUMERIQUE"><button class="btn btn-primary">LP metier du numerique</button></a>
-                <a href="http://127.0.0.1:8000/formations/DUTGIM"><button class="btn btn-primary"> DUT GIM</button></a>
+                <a href="{{path('pro_stage_formations_avec_id',{idFormation:'DUTINFO'})}}"> <button class="btn btn-primary">DUT INFO</button></a>
+                <a href="{{path('pro_stage_formations_avec_id',{idFormation:'LPMETIERDUNUMERIQUE'})}}"><button class="btn btn-primary">LP metier du numerique</button></a>
+                <a href="{{path('pro_stage_formations_avec_id',{idFormation:'DUTGIM'})}}"><button class="btn btn-primary"> DUT GIM</button></a>
               </span>
             </div>
           </div>
@@ -100,17 +100,16 @@
       {% block Footer %}
       <br>
       <footer style="position: absolute; bottom: 0; left: 0; right: 0">
-        <div class="row">
+        <div class="row" style="margin-top:3px;">
           <div class="col-md-12">
             <div class="card bg-dark text-black">
               <img src="https://onlyvectorbackgrounds.com/wp-content/uploads/2019/08/Modern-Clean-Abstract-Shapes-Background-Blue.jpg" class="card-img" alt="..." style="background-size: cover;
 
-              height: 100px;">
+              height: 115px;">
               <div class="card-img-overlay">
 
                 <center><h5 class="card-title">Réalisé par </h5>
                   <p class="card-text">Thomas Galinié</p>
-                  <p class="card-text">DUT Info S3 TD II TP 4 A</p>
                 </center>
               </div>
             </div>
