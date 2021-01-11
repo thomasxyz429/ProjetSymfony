@@ -1,7 +1,58 @@
 {% extends 'base.html.twig' %}
 
-  {% block header %}
+  {% block contenu %}
   <center>
   <h1>Bienvenue sur la page d'accueil de Prostages</h1>
   </center>
+<br>
+<!-- STAGE 1 -->
+  <div class="card text-center" style="width: 18rem;">
+  <img src="https://www.infodreamgroup.fr/wp-content/uploads/2016/04/logo-safran-320x320-1.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"> [Safran] Stage pratique</h5>
+    <p class="card-text">Bonjour nous cherchons un etudiant en DUT GIM pour achever sur un stage de 10 semaines avec possiblement un prise en alternance</p>
+    <a href="#" class="btn btn-primary">En savoir plus </a>
+  </div>
+</div>
+
+ <!-- STAGE 2 -->
+<div class="card text-center" style="width: 18rem;" >
+<img src="data:image/png;base64,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" class="card-img-top" alt="...">
+<div class="card-body">
+  <h5 class="card-title">[UBISOFT]Offre de stage </h5>
+  <p class="card-text">Nous recherchons un stagiaire maitrisant le C# et java pour un projet de jeu video</p>
+  <a href="#" class="btn btn-primary">En savoir plus</a>
+</div>
+</div>
+
+<!-- STAGE 3 -->
+<div class="card text-center" style="width: 18rem;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" class="card-img-top" alt="...">
+<div class="card-body">
+  <h5 class="card-title"> [IBM] Stage pratique</h5>
+  <p class="card-text">Nous recherchons un colaborateur pour une mise en place d'un systeme informatique dans une college</p>
+  <a href="#" class="btn btn-primary">En savoir plus</a>
+</div>
+</div>
+
+<!-- STAGE 4 -->
+<div class="card text-center" style="width: 18rem;">
+<img src="https://www.infodreamgroup.fr/wp-content/uploads/2016/04/logo-safran-320x320-1.jpg" class="card-img-top" alt="...">
+<div class="card-body">
+  <h5 class="card-title"> [Safran] Stage conception d'un nouvel ERP</h5>
+  <p class="card-text">Stage pour validation d'année en informatique avec comme objectif la conception et le debut de la réalisation d'un nouvel ERP (ADOU)</p>
+  <a href="#" class="btn btn-primary">En savoir plus</a>
+</div>
+</div>
+
+<!-- STAGE 5 -->
+<div class="card text-center" style="width: 18rem;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" class="card-img-top" alt="...">
+<div class="card-body">
+  <h5 class="card-title">[IBM] Stage dans la mecanisation de la production de composant informatique </h5>
+  <p class="card-text">Nous avons pour objectif d'ameliorer notre production par la creation d'une machine pouvant souder des puces a une échelle microscopique</p>
+  <a href="#" class="btn btn-primary">En savoir plus</a>
+</div>
+</div>
+
   {% endblock %}
