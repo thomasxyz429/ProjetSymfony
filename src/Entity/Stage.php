@@ -47,6 +47,18 @@ class Stage
      */
     private $experienceRequise;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Formation::class, inversedBy="stages")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $formation;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Entreprise::class, inversedBy="stages")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $entreprise;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -120,6 +132,30 @@ class Stage
     public function setExperienceRequise(string $experienceRequise): self
     {
         $this->experienceRequise = $experienceRequise;
+
+        return $this;
+    }
+
+    public function getFormation(): ?Formation
+    {
+        return $this->formation;
+    }
+
+    public function setFormation(?Formation $formation): self
+    {
+        $this->formation = $formation;
+
+        return $this;
+    }
+
+    public function getEntreprise(): ?Entreprise
+    {
+        return $this->entreprise;
+    }
+
+    public function setEntreprise(?Entreprise $entreprise): self
+    {
+        $this->entreprise = $entreprise;
 
         return $this;
     }
