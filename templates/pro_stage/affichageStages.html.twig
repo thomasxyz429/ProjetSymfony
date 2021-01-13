@@ -2,28 +2,28 @@
 
 {% block header %}
 <center>
-<h1>Cette page affichera le descriptif du stage ayant pour identifiant {{idStage}}</h1>
+<h1>Cette page affichera le descriptif du stage ayant pour identifiant {{stage.id}}</h1>
 </center>
 {% endblock %}
 
 {% block contenu %}
-{% if idStage == 1 %}
+
 <div class="card border-dark mb-3" style="max-width: 100%;">
-  <div class="card-header">[Safran] Stage pratique </div>
+  <div class="card-header">{{stage.intitule}} </div>
   <div class="card-body text-dark">
     <center>
-    <img src="data:image/png;base64,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">
+    <img src={{stage.entreprise.logo}}>
     </center>
     <ul class="list-group">
-    <li class="list-group-item"><b>Prérequis</b>: Aucun </li>
-    <li class="list-group-item"><b>Durée </b>: 10 semaines</li>
-    <li class="list-group-item"><b>Formation</b> : DUT GIM </li>
-    <li class="list-group-item"> <b>Gratification </b>: 800€/m </li>
-    <li class="list-group-item"><b>Date d'ajout</b> : 11 janvier 2021 </li>
-    <li class="list-group-item"><b>Contact</b> : 0102030405</li>
-      <li class="list-group-item"><b>Description</b> : Bonjour nous cherchons un etudiant en DUT GIM pour achever sa formation sur un stage de 10 semaines avec possiblement un prise en alternance</li>
+    <li class="list-group-item"><b>Prérequis</b>: {{stage.competencesRequises}} </li>
+      <li class="list-group-item"><b>Expérience</b>: {{stage.experienceRequise}} </li>
+    <li class="list-group-item"><b>Durée </b>: {{stage.duree}}</li>
+    <li class="list-group-item"><b>Formation</b>: {{stage.formation.intitule}} </li>
+    <li class="list-group-item"><b>Date d'ajout</b> : {{stage.dateDebut}} </li>
+    <li class="list-group-item"><b>Contact</b> :{{stage.entreprise.adresse}}</li>
+      <li class="list-group-item"><b>Description</b>: {{stage.description}}</li>
   </ul>
   </div>
 </div>
-{% endif %}
+
 {% endblock %}

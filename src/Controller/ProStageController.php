@@ -15,10 +15,10 @@ class ProStageController extends AbstractController
     public function index(): Response
     {
       //RECUPERER LE Repository
-      $repositoryRessource = $this->getDoctrine()->getRepository(Stage::class);
+      $repositoryStages = $this->getDoctrine()->getRepository(Stage::class);
 
       //RECUERER LES STAGES
-$stages=$repositoryRessource->findAll();
+$stages=$repositoryStages->findAll();
       //ENVOYER LES STAGE
         return $this->render('pro_stage/index.html.twig', ["stages"=>$stages]);
     }
@@ -64,8 +64,13 @@ $stages=$repositoryRessource->findAll();
          */
         public function affichageStages($id): Response
         {
+          //RECUPERER LE Repository
+          $repositoryStage = $this->getDoctrine()->getRepository(Stage::class);
+
+          //RECUERER LES STAGES
+          $stage=$repositoryStage->find($id);
             return $this->render('pro_stage/affichageStages.html.twig', [
-                'idStage'=>$id]);
+                'stage'=>$stage]);
         }
 
 
