@@ -3,18 +3,18 @@
 {% block header %}
 <center>
   {% if idEntreprise == "IBM" %}
-   {% set entreprise = " I.B.M." %}
+    {% set entreprise = " I.B.M." %}
 
-   {% elseif idEntreprise == "UBISOFT" %}
- {% set entreprise = "Ubisoft" %}
+  {% elseif idEntreprise == "UBISOFT" %}
+    {% set entreprise = "Ubisoft" %}
 
-    {% elseif idEntreprise == "SAFRAN" %}
+  {% elseif idEntreprise == "SAFRAN" %}
     {% set entreprise = "Safran" %}
 
- {% else %}
+  {% else %}
     {% set entreprise = "tout le monde" %}
 
- {% endif %}
- <h1> Cette page affichera la liste des offres de {{entreprise}}  </h1>
+  {% endif %}
+  <h1> Cette page affichera la liste des offres de {{entreprise}}  </h1>
 </center>
 {% endblock %}

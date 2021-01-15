@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-  {% block contenu %}
-  <center>
+{% block contenu %}
+<center>
   <h1>Bienvenue sur la page d'accueil de Prostages</h1>
-  </center>
+</center>
 <br>
 <!-- STAGE 1 -->
 {% for stageCourant in stages %}
-  <div class="card text-center" style="width: 18rem;">
+<div class="card text-center" style="width: 18rem;">
   <img src= {{stageCourant.entreprise.logo}} class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title"> {{stageCourant.intitule}}</h5>
@@ -18,4 +18,4 @@
 {% endfor %}
 
 
-  {% endblock %}
+{% endblock %}
